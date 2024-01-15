@@ -1,0 +1,34 @@
+#loading{
+    height: 50px;
+    width: 50px;
+}
+#find{
+    width: calc(340px - 20px);
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: rgb(242, 146, 146);
+    cursor: pointer;
+    font-size: 20px;
+}
+#enterName{
+    margin-bottom: 20px;
+    width: fit-content;
+    margin: auto;
+    padding-bottom: 15px;
+    margin-top: 45px;
+    font-size: 40px;
+}
+#name{
+    height: 40px;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(340px - 20px);
+    font-size: 18px;
+}
+.row3{
+    display: grid;
+    align-items: center;
+    height: 30vh;
+}
