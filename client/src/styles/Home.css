@@ -1,6 +1,9 @@
 #loading{
-    height: 50px;
+    min-height: 50px;
     width: 50px;
+}
+#canvas{
+    height: calc(100vh - 115px - 4px);
 }
 #find{
     width: calc(340px - 20px);
@@ -10,13 +13,14 @@
     background-color: rgb(242, 146, 146);
     cursor: pointer;
     font-size: 20px;
+    margin-top: 70px;
 }
 #enterName{
     margin-bottom: 20px;
     width: fit-content;
     margin: auto;
     padding-bottom: 15px;
-    margin-top: 45px;
+    margin-top: 85px;
     font-size: 40px;
 }
 #name{
@@ -32,3 +36,24 @@
     align-items: center;
     height: 30vh;
 }
+#loading{
+    margin: auto;
+    margin-top: 20px;
+    display: none;
+}
+@media screen and (max-width: 500px){
+    #canvas{
+        min-height: calc(100vh - 102px - 4px);
+    }
+    #enterName{
+        font-size: 30px;
+    }
+    #name{
+        width: 
+            calc(260px - 20px);
+    }
+    #find{
+        width: calc(260px - 20px);
+    }
+}
+

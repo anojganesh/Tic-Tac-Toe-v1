@@ -1,15 +1,83 @@
-#cont .btn{ 
-    width:50px;
-    height: 50px;
-    background-color: beige;
-    border: 2px solid black;
+#canvas2{
+    min-height: calc(100vh - 107px - 4px);
 }
+#cont{
+    border-radius: 25px;
+    background-color: rgba(251, 173, 161, 0.144);
+    width: fit-content;
+    margin: auto;
+    padding: 8px;
+}
+#bigCont{
+    padding-bottom: 25px;
+}
+#cont .btn{ 
+    width:100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 0px;
+}
+#cont #btn1, #cont #btn2, #cont #btn3{
+    border-top: none;
+}
+
+#cont #btn1, #cont #btn4, #cont #btn7{
+    border-left: none;
+}
+#cont #btn3, #cont #btn6, #cont #btn9{
+    border-right: none;
+}
+#cont #btn7, #cont #btn8, #cont #btn9{
+    border-bottom: none;
+}
+
+.row{
+    height: fit-content;
+}
+
+.row5{
+    padding-bottom: 50px;
+}
+
 
 .names{
     font-size: 40px;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    width: fit-content;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: auto;
+}
+.col-sm-6{
+    overflow:auto;
 }
 .row2{
     overflow: hidden;
+    
+}
+.row5{
+    padding-bottom: 5px;
+}
+#valueCont{
+    font-size: 20px;
+    margin: auto;
+    text-decoration: underline;
+}
+#whosTurn{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic
+
+}
+@media screen and (max-width: 500px){
+    #canvas2{
+        min-height: calc(100vh - 95px - 4px);
+    }
+    .names{
+        font-size: 30px;
+    }
+    #oppNameCont{
+        padding-top: 0px;
+    }
 }

@@ -4,26 +4,34 @@ import Axios from "axios";
 import io from "socket.io-client";
 function Home() {
   const [player, setPlayer] = useState("");
-  const socket = io();
+  const socket = io('http://localhost:3001');
+  const loading = document.getElementById("loading");
 
-  let name;
-  const verifyGame = () => {
+  const verifyGame = async () => {
+    let name = "";
     name = document.getElementById("name").value;
-    if (name.length === 0){
-      name = "Player1";
+    if (
+      name === undefined ||
+      name.length === 0 ||
+      name.length > 10 ||
+      name === ""
+    ) {
+      alert("Invalid Name!");
+      console.log("invalid name: " + name);
+    } else {
+      document.getElementById("loading").style.display = "block";
+      document.getElementById("find").disabled = true;
+      socket.emit("find", {name : name});
     }
-    console.log(`name: ${name}`);
-    Axios.post("http://localhost:3001/game", name);
-  
-  
   };
+
 
   const updateName = (event) => {
     setPlayer(event.target.value);
   };
 
   return (
-    <>
+    <div id = "canvas">
       <div className="row row3">
         <div className="col-md-12">
           <h1 id="enterName">Enter your Name : </h1>
@@ -37,15 +45,20 @@ function Home() {
       </div>
       <div className="row row4">
         <div className="col-md-12">
-          <button onClick={(event) => {updateName(event); verifyGame();}} id="find">
+          <button
+            onClick={(event) => {
+              updateName(event);
+              verifyGame();
+            }}
+            id="find"
+          >
             Search for a player
           </button>
           <br />
-          <a href="/game">test</a>
           <img src={loadingGif} id="loading" alt="loading" />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Home;
