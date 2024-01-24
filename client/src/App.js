@@ -10,11 +10,12 @@ import { useState } from "react";
 import io from "socket.io-client";
 
 function App() {
+  const server = "http://localhost:3001";
   const [displayGame, setDisplayGame] = useState(false);
   const [pName1, setPName1] = useState("");
   const [pName2, setPName2] = useState("");
   const [letterValue, setValue] = useState("");
-  const socket = io("http://localhost:3001");
+  const socket = io(server);
 
   socket.on("find", (e) => {
     if (!e.empty) {

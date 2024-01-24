@@ -3,8 +3,9 @@ import loadingGif from "../assets/loading-gif (1).gif";
 import Axios from "axios";
 import io from "socket.io-client";
 function Home() {
+  const server = "http://localhost:3001";
   const [player, setPlayer] = useState("");
-  const socket = io('http://localhost:3001');
+  const socket = io(server);
   const loading = document.getElementById("loading");
   const verifyGame = async () => {
     let name = "";
