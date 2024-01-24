@@ -17,48 +17,55 @@ function App() {
   const socket = io("http://localhost:3001");
 
   socket.on("find", (e) => {
-    let allPlayersArray = e.allPlayersArray;
-    console.log(allPlayersArray);
-    let value = "default";
-    let oppName = "";
-    let name = "";
+    if (!e.empty) {
+      let allPlayersArray = e.allPlayersArray;
+      let value = "default";
+      let oppName = "";
+      let name = "";
 
-    try {
-      name = document.getElementById("name").value;
-    }
-    catch (e){}
-
-    let foundObj = undefined;
-    for (let i = allPlayersArray.length-1; i >= 0; i--){ //reverse indexing
-      let obj = allPlayersArray[i];
-      console.log("obj: " + obj.p1.name);
-      if (obj.p1.name == `${name}` || obj.p2.name == `${name}`){
-        foundObj = obj;
-        break;
+      try {
+        name = document.getElementById("name").value;
+      } catch (e) {
+        try {
+          name = document.getElementById("user").textContent;
+        } catch (e) {}
       }
-    }
+      let foundObj = undefined;
+      for (let i = allPlayersArray.length - 1; i >= 0; i--) {
+        //reverse indexing
+        let obj = allPlayersArray[i];
+        if (obj.p1.name == `${name}` || obj.p2.name == `${name}`) {
+          foundObj = obj;
+          break;
+        }
+      }
       if (foundObj) {
-      if (foundObj.p1.name == foundObj.p2.name){
-        alert("Match aborted: Same name as opponent!");
-        document.getElementById("name").value = "";
-        document.getElementById("find").disabled = false;
-        document.getElementById("loading").style.display = "none";
-      }
-      else{ 
-      foundObj.p1.name == `${name}`
-        ? (oppName = foundObj.p2.name)
-        : (oppName = foundObj.p1.name);
-      foundObj.p1.name == `${name}`
-        ? (value = foundObj.p1.value)
-        : (value = foundObj.p2.value);
-      setPName1(name);
-      setPName2(oppName);
-      setValue(value);
-      setDisplayGame(true);
+        if (foundObj.p1.name == foundObj.p2.name) {
+          alert("Match aborted: Same name as opponent!");
+          document.getElementById("name").value = "";
+          document.getElementById("find").disabled = false;
+          document.getElementById("loading").style.display = "none";
+        } else {
+          foundObj.p1.name == `${name}`
+            ? (oppName = foundObj.p2.name)
+            : (oppName = foundObj.p1.name);
+          foundObj.p1.name == `${name}`
+            ? (value = foundObj.p1.value)
+            : (value = foundObj.p2.value);
+          setPName1(name);
+          setPName2(oppName);
+          setValue(value);
+          setDisplayGame(true);
+        }
       }
     }
-    console.log("value: " + value);
-    console.log("socket recieved by client");
+  });
+
+
+  socket.on("getmenu", (e) => {
+    if (pName1 == e.name) {
+      setDisplayGame(false);
+    }
   });
 
   return (

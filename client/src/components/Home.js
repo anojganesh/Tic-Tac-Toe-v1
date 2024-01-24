@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import loadingGif from "../assets/loading-gif (1).gif";
 import Axios from "axios";
 import io from "socket.io-client";
@@ -6,7 +6,6 @@ function Home() {
   const [player, setPlayer] = useState("");
   const socket = io('http://localhost:3001');
   const loading = document.getElementById("loading");
-
   const verifyGame = async () => {
     let name = "";
     name = document.getElementById("name").value;
@@ -17,7 +16,6 @@ function Home() {
       name === ""
     ) {
       alert("Invalid Name!");
-      console.log("invalid name: " + name);
     } else {
       document.getElementById("loading").style.display = "block";
       document.getElementById("find").disabled = true;
@@ -25,6 +23,11 @@ function Home() {
     }
   };
 
+  socket.on("finderror", (e) => {
+    alert("Name is already in use. Inactive games will clear in 5-10 minutes.");
+    document.getElementById("loading").style.display = 'none';
+    document.getElementById("find").disabled = false;
+  });
 
   const updateName = (event) => {
     setPlayer(event.target.value);

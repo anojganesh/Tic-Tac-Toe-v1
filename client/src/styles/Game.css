@@ -6,16 +6,27 @@
     background-color: rgba(251, 173, 161, 0.144);
     width: fit-content;
     margin: auto;
-    padding: 8px;
+    padding: 25px;
 }
 #bigCont{
     padding-bottom: 25px;
 }
 #cont .btn{ 
+    color: rgba(0, 0, 0, 1);
     width:100px;
     height: 100px;
     border: 2px solid black;
     border-radius: 0px;
+    font-size: 60px;
+}
+#cont .btn:disabled{ 
+    opacity: 0.8;
+    color: rgba(0, 0, 0, 0.75);
+    width:100px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 0px;
+    font-size: 60px;
 }
 #cont #btn1, #cont #btn2, #cont #btn3{
     border-top: none;
@@ -70,6 +81,36 @@
     font-style: italic
 
 }
+
+#menuBtn{
+    float: left;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    background-color: rgba(255, 164, 164, 0.407);
+    display: none;
+}
+#requeueBtn{
+   float: right;
+   width: 150px;
+   height: 50px;
+   border-radius: 10px;
+   font-size: 19px;
+   font-weight: 500;
+   padding-bottom: 5px;
+   background-color: rgba(255, 164, 164, 0.407);
+   display: none;
+}
+#btnloading{
+    margin-left: 12px;
+    margin-bottom: 2px;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
 @media screen and (max-width: 500px){
     #canvas2{
         min-height: calc(100vh - 95px - 4px);
@@ -79,5 +120,16 @@
     }
     #oppNameCont{
         padding-top: 0px;
+    }
+}
+
+@media screen and (max-width: 575px){
+    #requeueBtn, #menuBtn{
+       float: none;
+       margin: auto;
+       width: 325px;
+    }
+    .replay{
+        padding-bottom: 20px;
     }
 }
