@@ -38,7 +38,7 @@ function Home() {
     <div id = "canvas">
       <div className="row row3">
         <div className="col-md-12">
-          <h1 id="enterName">Enter your Name : </h1>
+          <h1 id="enterName">Enter your name: </h1>
           <input
             type="text"
             placeholder="Player1"
