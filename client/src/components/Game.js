@@ -3,7 +3,9 @@ import io from "socket.io-client";
 import loading from "../assets/loading-gif (1).gif";
 
 function Game({ name1, name2, value }) {
-  const server = "http://localhost:3001";
+  /*http://localhost:3000*/
+  /*https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js*/
+  const server = "https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js";
   const [myName, setName1] = useState(name1);
   const [oppName, setName2] = useState(name2);
   const [myValue, setValue] = useState(value);

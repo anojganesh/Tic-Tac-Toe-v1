@@ -7,7 +7,9 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const server = http.createServer(app);
-const clientUrl = "http://localhost:3000";
+/*https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js*/
+/*http://localhost:3000*/
+const clientUrl = "https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js";
 const io = new Server(server, {
   cors: {
     origin: clientUrl,

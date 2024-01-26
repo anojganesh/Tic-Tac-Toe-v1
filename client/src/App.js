@@ -10,7 +10,9 @@ import { useState } from "react";
 import io from "socket.io-client";
 
 function App() {
-  const server = "http://localhost:3001";
+  /*http://localhost:3000*/
+  /*https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js*/
+  const server = "https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/src/index.js";
   const [displayGame, setDisplayGame] = useState(false);
   const [pName1, setPName1] = useState("");
   const [pName2, setPName2] = useState("");

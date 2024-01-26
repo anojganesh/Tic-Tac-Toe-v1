@@ -3,7 +3,9 @@ import loadingGif from "../assets/loading-gif (1).gif";
 import Axios from "axios";
 import io from "socket.io-client";
 function Home() {
-  const server = "http://localhost:3001";
+  /*https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/server/src/index.js*/
+  /*http://localhost:3001*/
+  const server = "https://cs.torontomu.ca/~a3ganesh/Tic-Tac-Toe-v1/server/src/index.js";
   const [player, setPlayer] = useState("");
   const socket = io(server);
   const loading = document.getElementById("loading");
@@ -38,7 +40,7 @@ function Home() {
     <div id = "canvas">
       <div className="row row3">
         <div className="col-md-12">
-          <h1 id="enterName">Enter your Name : </h1>
+          <h1 id="enterName">Enter your name: </h1>
           <input
             type="text"
             placeholder="Player1"
