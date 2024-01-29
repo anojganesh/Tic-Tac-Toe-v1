@@ -134,7 +134,7 @@ io.on("connection", (socket) => {
 
 app.get("/", (req, res) => {
   console.log(__dirname);
-  res.sendFile("public/index.html");
+  res.sendFile(path.join(__dirname, "..", "public", "index.html"));
 });
 
 server.listen(PORT, () => {
