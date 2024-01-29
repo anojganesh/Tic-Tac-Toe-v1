@@ -26,7 +26,7 @@ app.use(express.static(path.resolve("")));
 app.use(express.json());
 
 /*app.use(express.static(path.resolve(__dirname, "../../client/build")));*/
-app.use('/static', express.static(path.join("public")));
+app.use('/static', express.static(path.join(__dirname, "..", 'public', 'static')));
 
 let disconnectedCount = 0;
 
