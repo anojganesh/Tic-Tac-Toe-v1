@@ -26,7 +26,7 @@ app.use(express.static(path.resolve("")));
 app.use(express.json());
 
 /*app.use(express.static(path.resolve(__dirname, "../../client/build")));*/
-app.use('/maifest.json', express.static(path.join(__dirname, '..', 'public')));
+app.use('/manifest.json', express.static(path.join(__dirname, '..', 'public')));
 app.use('/static', express.static(path.join(__dirname, "..", 'public', 'static')));
 
 
