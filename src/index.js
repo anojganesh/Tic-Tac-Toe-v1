@@ -133,7 +133,8 @@ io.on("connection", (socket) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(('public/index.html'));
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 server.listen(PORT, () => {
