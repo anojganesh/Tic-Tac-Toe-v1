@@ -3,6 +3,6 @@ Live demo available at: https://tic-tac-toe-ag.netlify.app/
 
 Instructions:
 
-Enter your name, then click 'Search for player', once another player joins the queue, you should be entered into a game!.
+Enter your name, then click 'Search for player', once another player joins the queue, you should be entered into a game!
 
 Feel free to join the queue in another tab/device to simulate 2+ player functionality.
